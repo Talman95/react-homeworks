@@ -1,10 +1,10 @@
 import React from 'react'
-import {DataType} from "./HW2";
+import {AffairType} from "./HW2";
 import cl from './Affairs.module.css';
 
 type AffairPropsType = {
     // key не нужно типизировать
-    affair: DataType
+    affair: AffairType
     deleteAffairCallback: (_id: number) => void
     id: number
 }
