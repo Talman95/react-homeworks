@@ -1,12 +1,33 @@
-.superInput {
-
+/*.wrapper {*/
+/*    display: flex;*/
+/*    min-width: 250px;*/
+/*    align-items: center;*/
+/*}*/
+.defaultInput {
+    background: #efefef;
+    padding: 10px;
+    outline: none;
+    color: #919191;
+    border-radius: 6px;
+    border: none;
+    margin: 10px;
 }
 
-.errorInput {
-    border: 3px solid lime;
-    background: red;
+.superInput:focus {
+    background: #fff;
+    border: 1px solid #1876f2;
+    color: black;
+    padding: 9px;
+}
+
+.errorInput,
+.errorInput:focus {
+    border: 1px solid red;
+    color: red;
+    padding: 9px;
 }
 
 .error {
     color: red;
+
 }
