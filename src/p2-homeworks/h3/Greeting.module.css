@@ -1,5 +1,6 @@
-.someClass {
-
+.container {
+    display: flex;
+    align-items:self-end;
 }
 
 .error {
