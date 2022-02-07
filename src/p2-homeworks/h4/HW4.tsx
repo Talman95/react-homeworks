@@ -66,7 +66,7 @@ function HW4() {
 
                 {/*// onChange тоже должен работать*/}
                 <SuperCheckbox checked={checked} onChange={testOnChange}>
-                    no need without text?
+
                 </SuperCheckbox>
             </div>
 
