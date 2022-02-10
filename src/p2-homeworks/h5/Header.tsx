@@ -1,6 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import s from './Header.module.css';
+import {PATH} from "./MyRoutes";
 
 function Header() {
     return (
@@ -15,13 +16,13 @@ function Header() {
 
             <ul className={s.hidden_menu}>
                 <li>
-                    <NavLink to={'/pre-junior'} className={s.item}>PreJunior</NavLink>
+                    <NavLink to={PATH.PRE_JUNIOR} className={s.item}>Pre-Junior</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/junior'} className={s.item}>Junior</NavLink>
+                    <NavLink to={PATH.JUNIOR} className={s.item}>Junior</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/junior-plus'} className={s.item}>JuniorPlus</NavLink>
+                    <NavLink to={PATH.JUNIOR_PLUS} className={s.item}>Junior Plus</NavLink>
                 </li>
             </ul>
 

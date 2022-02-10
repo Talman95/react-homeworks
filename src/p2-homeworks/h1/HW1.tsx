@@ -12,7 +12,7 @@ function HW1() {
     return (
         <div>
             <hr/>
-            homeworks 1
+            <span className={'spanTitle'}>homeworks 1</span>
 
             {/*should work (должно работать)*/}
 
@@ -26,7 +26,7 @@ function HW1() {
             <hr/>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeMessage/>*/}
-            <hr/>
+            {/*<hr/>*/}
         </div>
     )
 }

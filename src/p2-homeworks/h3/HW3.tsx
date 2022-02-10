@@ -20,7 +20,7 @@ function HW3() {
     return (
         <div>
             <hr/>
-            homeworks 3
+            <span className={'spanTitle'}>homeworks 3</span>
 
             {/*should work (должно работать)*/}
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>
@@ -28,7 +28,7 @@ function HW3() {
             <hr/>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeGreeting/>*/}
-            <hr/>
+            {/*<hr/>*/}
         </div>
     )
 }
