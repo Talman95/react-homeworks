@@ -1,0 +1,6 @@
+.mySpan {
+    display: inline-block;
+    padding-top: 30px;
+    cursor: pointer;
+    height: 30px;
+}

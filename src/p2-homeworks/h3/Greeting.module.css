@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    align-items:self-end;
+    align-items: flex-end;
 }
 
 .error {
