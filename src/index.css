@@ -26,3 +26,20 @@ code {
     letter-spacing: 1px;
     font-style: italic;
 }
+
+/* внешние границы таблицы */
+table {
+    border: 1px solid grey;
+    width: 400px;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+/* границы ячеек первого ряда таблицы */
+th {
+    border: 1px solid grey;
+}
+/* границы ячеек тела таблицы */
+td {
+    border: 1px solid grey;
+}

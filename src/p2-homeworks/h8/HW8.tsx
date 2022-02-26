@@ -1,8 +1,12 @@
 import React, {useState} from 'react'
-import {homeWorkReducer} from './bll/homeWorkReducer'
+import {checkPeopleAC, homeWorkReducer, sortPeopleAC} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
-// export type UserType =
+export type UserType = {
+    _id: number
+    name: string
+    age: number
+}
 
 const initialPeople = [
     {_id: 0, name: 'Кот', age: 3},
@@ -14,33 +18,44 @@ const initialPeople = [
 ]
 
 function HW8() {
-    const [people, setPeople] = useState<any>(initialPeople) // need to fix any
+    const [people, setPeople] = useState<UserType[]>(initialPeople) // need to fix any
 
     // need to fix any
-    const finalPeople = people.map((p: any) => (
-        <div key={p._id}>
-            some name, age
-        </div>
+    const finalPeople = people.map((p: UserType) => (
+        <tr key={p._id}>
+            <td>{p.name}</td>
+            <td>{p.age}</td>
+        </tr>
     ))
 
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
+    const sortUp = () => setPeople(homeWorkReducer(initialPeople, sortPeopleAC('up')))
+    const sortDown = () => setPeople(homeWorkReducer(initialPeople, sortPeopleAC('down')))
+    const checkAge = () => setPeople(homeWorkReducer(initialPeople, checkPeopleAC(18)))
 
     return (
         <div>
             <hr/>
-            homeworks 8
+            <span className={'spanTitle'}>homeworks 8</span>
 
             {/*should work (должно работать)*/}
-            {finalPeople}
+            <table>
+                <tr>
+                    <th>Имя</th>
+                    <th>Возраст</th>
+                </tr>
+                {finalPeople}
+            </table>
 
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div>sort down</div>
-            check 18
+            <div style={{display: 'flex', marginRight: '5px'}}>
+                <SuperButton onClick={sortUp}>sort up</SuperButton>
+                <SuperButton onClick={sortDown}>sort down</SuperButton>
+                <SuperButton onClick={checkAge}>check 18</SuperButton>
+            </div>
 
             <hr/>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativePeople/>*/}
-            <hr/>
+            {/*<hr/>*/}
         </div>
     )
 }
