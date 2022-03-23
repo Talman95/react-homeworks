@@ -35,11 +35,17 @@ table {
     border-collapse: collapse;
     margin-bottom: 10px;
 }
+
 /* границы ячеек первого ряда таблицы */
 th {
     border: 1px solid grey;
 }
+
 /* границы ячеек тела таблицы */
 td {
     border: 1px solid grey;
+}
+/*Размеры для десятой домашки */
+.HW10 {
+    height: 60px;
 }
