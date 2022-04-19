@@ -49,3 +49,7 @@ td {
 .HW10 {
     height: 60px;
 }
+.HW13 {
+    display: flex;
+    align-items: center;
+}
