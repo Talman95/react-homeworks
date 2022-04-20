@@ -1,10 +1,15 @@
 import React, {useState} from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../h10/bll/store";
+import {ThemeTypes} from "../h12/bll/themeReducer";
+import themeStyle from "../h12/HW12.module.css";
 
 function Clock() {
     const [timerId, setTimerId] = useState<number>(0)
     const [date, setDate] = useState<Date>()
     const [show, setShow] = useState<boolean>(false)
+    const theme = useSelector<AppStoreType, ThemeTypes>(state => state.theme.theme)
 
     const stop = () => {
         clearInterval(timerId)
@@ -43,8 +48,8 @@ function Clock() {
                 </div>
             )}
             <br/>
-            <SuperButton onClick={start}>start</SuperButton>
-            <SuperButton onClick={stop}>stop</SuperButton>
+            <SuperButton onClick={start} className={themeStyle[theme + '-button']}>start</SuperButton>
+            <SuperButton onClick={stop} className={themeStyle[theme + '-button']}>stop</SuperButton>
         </div>
     )
 }

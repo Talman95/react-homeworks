@@ -22,9 +22,8 @@ function HW12() {
     return (
         <div className={s[theme]}>
             <hr/>
-            <span className={s[theme + '-text']}>
-                homeworks 12
-            </span>
+            <span className={'spanTitle'}>homeworks 12</span>
+            <br/>
 
             <SuperRadio
                 name={'radio'}
@@ -32,7 +31,7 @@ function HW12() {
                 value={theme}
                 onChangeOption={onChangeOption}
             />
-            <hr/>
+            {/*<hr/>*/}
         </div>
     );
 }

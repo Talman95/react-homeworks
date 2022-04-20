@@ -2,10 +2,15 @@ import React, {useState} from 'react';
 import SuperCheckbox from "../h4/common/c3-SuperCheckbox/SuperCheckbox";
 import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 import {RequestsAPI} from "./RequestsAPI";
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../h10/bll/store";
+import {ThemeTypes} from "../h12/bll/themeReducer";
+import themeStyle from "../h12/HW12.module.css";
 
 export const Request = () => {
     const [value, setValue] = useState(true)
     const [response, setResponse] = useState('')
+    const theme = useSelector<AppStoreType, ThemeTypes>(state => state.theme.theme)
 
     const sendRequest = () => {
         RequestsAPI.sendValue(value)
@@ -22,7 +27,9 @@ export const Request = () => {
     return (
         <div className={'HW13'}>
             <SuperCheckbox checked={value} onChangeChecked={setValue}/>
-            <SuperButton onClick={sendRequest}/>
+            <SuperButton onClick={sendRequest} className={themeStyle[theme + '-button']}>
+                Send request
+            </SuperButton>
             <p>Response: {response}</p>
         </div>
     );

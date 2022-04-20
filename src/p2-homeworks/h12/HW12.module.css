@@ -1,13 +1,48 @@
 .dark {
     background: dimgrey;
+    color: aliceblue;
 }
 
-.dark-text {
-    color: aliceblue;
+.dark-button {
+    background: grey;
+    color: lightgray;
+}
+
+.dark-button:hover {
+    background: darkgrey;
+}
+
+.dark-button:active {
+    box-shadow: 0 0 0 1px rgba(128, 128, 128, 0.43);
+}
+
+.dark-button:disabled {
+    background: #efefef;
+    cursor: default;
+}
+
+.dark-input {
+    color: black;
+}
+
+.dark-input:focus {
+    background: white;
+    border: 1px solid black;
+    color: black;
+    padding: 9px;
+}
+
+.dark-menu {
+    background: lightgrey;
+}
+
+.dark-btnMenu {
+    background: dimgrey;
 }
 
 .red {
     background: lightcoral;
+    color: aqua;
 }
 
 .red-text {
@@ -16,6 +51,7 @@
 
 .some {
     background: lightgreen;
+    color: darkslateblue;
 }
 
 .some-text {
@@ -23,9 +59,15 @@
 }
 
 .blue {
-    background: #1876f2;
+    background: #FFFFFF;
+    color: #1876f2;
 }
 
-.blue-text {
-    color: #FFFFFF;
+.blue-menu {
+    background-color: #eee;
+}
+
+.blue-btnMenu {
+    color: #fff;
+    background-color: #1876f2;
 }

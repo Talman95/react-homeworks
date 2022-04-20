@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 100px);
     gap: 30px;
-    color: #444444;
+    /*color: #444444;*/
     margin: 10px;
 }
 button{
@@ -23,5 +23,5 @@ button{
     text-align: center;
 }
 .name {
-    color: black;
+    /*color: black;*/
 }

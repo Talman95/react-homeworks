@@ -1,6 +1,10 @@
 import React, {useState} from 'react'
 import {checkPeopleAC, homeWorkReducer, sortPeopleAC} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import themeStyle from "../h12/HW12.module.css";
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../h10/bll/store";
+import {ThemeTypes} from "../h12/bll/themeReducer";
 
 export type UserType = {
     _id: number
@@ -19,6 +23,7 @@ const initialPeople = [
 
 function HW8() {
     const [people, setPeople] = useState<UserType[]>(initialPeople) // need to fix any
+    const theme = useSelector<AppStoreType, ThemeTypes>(state => state.theme.theme)
 
     // need to fix any
     const finalPeople = people.map((p: UserType) => (
@@ -47,12 +52,12 @@ function HW8() {
             </table>
 
             <div style={{display: 'flex', marginRight: '5px'}}>
-                <SuperButton onClick={sortUp}>sort up</SuperButton>
-                <SuperButton onClick={sortDown}>sort down</SuperButton>
-                <SuperButton onClick={checkAge}>check 18</SuperButton>
+                <SuperButton onClick={sortUp} className={themeStyle[theme + '-button']}>sort up</SuperButton>
+                <SuperButton onClick={sortDown} className={themeStyle[theme + '-button']}>sort down</SuperButton>
+                <SuperButton onClick={checkAge} className={themeStyle[theme + '-button']}>check 18</SuperButton>
             </div>
 
-            <hr/>
+            {/*<hr/>*/}
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativePeople/>*/}
             {/*<hr/>*/}

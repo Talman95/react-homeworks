@@ -5,11 +5,14 @@ import {AppStoreType} from "./bll/store";
 import {Dispatch} from "redux";
 import {loadingAC, LoadingActionType} from './bll/loadingReducer';
 import settings from '../../images/settings.gif';
+import themeStyle from "../h12/HW12.module.css";
+import {ThemeTypes} from "../h12/bll/themeReducer";
 
 function HW10() {
     // useSelector, useDispatch
     const loading = useSelector<AppStoreType, boolean>(state => state.loading.isLoading)
     const dispatch = useDispatch<Dispatch<LoadingActionType>>()
+    const theme = useSelector<AppStoreType, ThemeTypes>(state => state.theme.theme)
 
     const setLoading = () => {
         dispatch(loadingAC(true))
@@ -30,12 +33,16 @@ function HW10() {
                     <div className={'HW10'}><img src={settings} alt={'loading'}/></div>
                 ) : (
                     <div className={'HW10'}>
-                        <SuperButton onClick={setLoading}>set loading...</SuperButton>
+                        <SuperButton
+                            onClick={setLoading}
+                            className={themeStyle[theme + '-button']}
+                        >set loading...
+                        </SuperButton>
                     </div>
                 )
             }
 
-            <hr/>
+            {/*<hr/>*/}
             {/*для личного творчества, могу проверить*/}
             {/*<Alternative/>*/}
             {/*<hr/>*/}

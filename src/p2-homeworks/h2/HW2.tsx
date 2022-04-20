@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../h10/bll/store";
+import {ThemeTypes} from "../h12/bll/themeReducer";
 
 // types
 export type AffairPriorityType = 'low' | 'middle' | 'high';
@@ -33,6 +36,7 @@ export const deleteAffair = (affairs: AffairType[], _id: number): AffairType[] =
 function HW2() {
     const [affairs, setAffairs] = useState<AffairType[]>(defaultAffairs) // need to fix any
     const [filter, setFilter] = useState<FilterType>('all')
+    const theme = useSelector<AppStoreType, ThemeTypes>(state => state.theme.theme)
 
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
@@ -47,9 +51,10 @@ function HW2() {
                 data={filteredAffairs}
                 setFilter={setFilter}
                 deleteAffairCallback={deleteAffairCallback}
+                theme={theme}
             />
 
-            <hr/>
+            {/*<hr/>*/}
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeAffairs/>*/}
             {/*<hr/>*/}

@@ -1,10 +1,12 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
 import {UserType} from "./HW3";
+import {ThemeTypes} from "../h12/bll/themeReducer";
 
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any
     addUserCallback: (name: string) => void // need to fix any
+    theme: ThemeTypes
 }
 
 // более простой и понятный для новичков
@@ -12,7 +14,7 @@ type GreetingContainerPropsType = {
 
 // более современный и удобный для про :)
 // уровень локальной логики
-const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
+const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback, theme}) => { // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
 
@@ -47,6 +49,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             error={error}
             totalUsers={totalUsers}
             onEnterPress={onEnterPressHandler}
+            theme={theme}
         />
     )
 }
