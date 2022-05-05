@@ -26,10 +26,12 @@ export const Request = () => {
 
     return (
         <div className={'HW13'}>
-            <SuperCheckbox checked={value} onChangeChecked={setValue}/>
-            <SuperButton onClick={sendRequest} className={themeStyle[theme + '-button']}>
-                Send request
-            </SuperButton>
+            <div className={'HW13-onCenter'}>
+                <SuperCheckbox checked={value} onChangeChecked={setValue}/>
+                <SuperButton onClick={sendRequest} className={themeStyle[theme + '-button']}>
+                    Send request
+                </SuperButton>
+            </div>
             <p>Response: {response}</p>
         </div>
     );
